@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050816">
+<meta name="color-scheme" content="dark">
+<title>Ahmed Abdo — Cloud, Linux & Networking | Computer Engineering</title>
+<meta name="description" content="Computer Engineering undergraduate in Cairo building toward Cloud Security and DevSecOps. AWS, Linux, networking and hands-on projects. Open to internships and entry-level IT, Cloud and Cybersecurity roles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#55e6ff;--amber:#ffd37a;--bg:#050816;--bg2:#080d1d;--surface:rgba(12,19,38,.72);--surface2:rgba(18,28,52,.82);--line:rgba(125,151,190,.18);--line2:rgba(73,211,255,.30);--text:#eef6ff;--dim:#93a4bd;--blue:#39a9ff;--cyan:#55e6ff;--violet:#8b7cff;--green:#42e6a4;--sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,monospace;box-sizing:border-box}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:radial-gradient(circle at 80% 10%,rgba(57,169,255,.11),transparent 28%),radial-gradient(circle at 10% 45%,rgba(139,124,255,.08),transparent 28%),linear-gradient(180deg,var(--bg),#03050c 100%);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,black,transparent 75%);z-index:-1}
+a{color:inherit}:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}section{padding:104px 0;position:relative}section.alt{background:linear-gradient(180deg,rgba(10,16,31,.82),rgba(7,11,23,.52));border-top:1px solid rgba(255,255,255,.025);border-bottom:1px solid rgba(255,255,255,.025)}
+h1,h2,h3{margin:0;font-weight:650;line-height:1.08}h2{font-size:clamp(30px,4vw,48px);letter-spacing:-.035em;margin-bottom:14px}h3{font-size:18px}.kicker{font:600 12px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin:0 0 14px}.sub{color:var(--dim);max-width:64ch;margin:0 0 38px;font-size:17px}
+header.site{position:sticky;top:0;z-index:30;background:rgba(5,8,22,.72);backdrop-filter:blur(18px);border-bottom:1px solid rgba(125,151,190,.14)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 28px;max-width:1160px;margin:0 auto}.logo{display:inline-flex;align-items:center;gap:9px;text-decoration:none}.dravik-logo{min-width:170px}.dravik-mark{width:38px;height:38px;flex:none;filter:drop-shadow(0 0 10px rgba(85,230,255,.16))}.dravik-word{display:flex;align-items:baseline;font-family:var(--mono);font-weight:800;font-size:16px;letter-spacing:.055em;line-height:1}.dravik-word b{color:#eef6ff}.dravik-word strong{color:var(--cyan);font-size:18px;margin-left:1px}.logo:after{display:none}.links{display:flex;gap:22px;font-size:13px;color:#91a4be}.links a{text-decoration:none;transition:.2s}.links a:hover{color:var(--cyan)}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:700 14px var(--sans);padding:12px 19px;border-radius:10px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s}.btn:hover{transform:translateY(-2px)}.btn-p{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#03101c;box-shadow:0 10px 30px rgba(57,169,255,.18)}.btn-g{border-color:var(--line);color:var(--text);background:rgba(255,255,255,.025)}.btn-g:hover{border-color:var(--line2);box-shadow:0 10px 30px rgba(57,169,255,.08)}.menu{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:7px 11px;font:13px var(--mono)}#mnav{display:none}
+.hero{min-height:calc(100vh - 70px);display:flex;align-items:center;padding:76px 0 92px;overflow:hidden}.hero:after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-220px;top:60px;background:radial-gradient(circle,rgba(57,169,255,.18),transparent 68%);filter:blur(10px);pointer-events:none}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center}.hero h1{font-size:clamp(46px,7vw,82px);letter-spacing:-.065em;max-width:760px}.role{font:600 14px/1.8 var(--mono);color:var(--cyan);margin:18px 0 0;letter-spacing:.04em}.loc{font:12px var(--mono);color:#71839d;margin:7px 0 0}.hero p.lead{color:#a8b6ca;font-size:19px;max-width:58ch;margin:24px 0 30px}.row{display:flex;gap:12px;flex-wrap:wrap}.social{display:flex;gap:9px;margin-top:24px;flex-wrap:wrap;font:12px var(--mono)}.social a{border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:8px;padding:8px 12px;text-decoration:none;color:#91a4be;transition:.2s}.social a:hover{color:var(--cyan);border-color:var(--line2);transform:translateY(-1px)}
+.emblem{position:relative;display:flex;flex-direction:column;align-items:center;gap:16px;justify-self:end;width:min(440px,100%);padding:44px 34px 34px;border:1px solid rgba(73,211,255,.20);border-radius:28px;background:linear-gradient(145deg,rgba(18,29,55,.76),rgba(5,10,23,.86));box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 35px 90px rgba(0,0,0,.42),0 0 80px rgba(57,169,255,.08);overflow:hidden}.emblem:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(85,230,255,.16),transparent 68%);top:-100px;right:-80px}.emblem:after{content:"AWS • LINUX • NETWORKING • SECURITY";position:absolute;top:16px;left:0;right:0;text-align:center;font:10px var(--mono);letter-spacing:.12em;color:#6e87a8}.emblem .big{width:min(310px,75vw);height:auto;filter:drop-shadow(0 0 30px rgba(85,230,255,.15))}.emblem .wm{text-align:center;margin:0}.emblem .wm b{display:block;font:700 19px var(--sans);letter-spacing:.03em}.emblem .wm span{display:block;margin-top:5px;font:11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--cyan)}
+.about{display:grid;grid-template-columns:1.3fr .7fr;gap:76px}.about p{color:var(--dim);margin:0 0 17px;font-size:16px;max-width:68ch}.facts{margin:0;display:grid;gap:0;border-top:1px solid var(--line);align-content:start}.fact{padding:17px 0;border-bottom:1px solid var(--line)}.fact dt{font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#687c99;margin-bottom:4px}.fact dd{margin:0;font-weight:550;color:#dce8f7}
+.grid{display:grid;gap:18px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}.card,.feat{background:linear-gradient(145deg,rgba(15,24,47,.82),rgba(8,14,29,.72));border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 18px 50px rgba(0,0,0,.12);transition:transform .25s,border-color .25s,box-shadow .25s}.card:hover,.feat:hover{transform:translateY(-4px);border-color:rgba(85,230,255,.25);box-shadow:0 24px 70px rgba(0,0,0,.22)}.alt .card{background:rgba(8,14,28,.68)}.card h3{font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);margin-bottom:17px}.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}.chips li{border:1px solid rgba(125,151,190,.16);background:rgba(255,255,255,.025);border-radius:8px;padding:7px 11px;font-size:13px;color:#c4d1e2}.chips.big li{padding:10px 15px;font-size:14px}.feat{padding:34px;margin-bottom:18px;position:relative;overflow:hidden}.feat:after{content:"";position:absolute;right:-80px;top:-100px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(57,169,255,.12),transparent 68%);pointer-events:none}.feat h3{font:650 28px var(--sans);color:var(--text);margin:12px 0}.feat>p{color:var(--dim);max-width:75ch;margin:0 0 25px}.hl{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}.hl div{border-top:1px solid rgba(85,230,255,.35);padding-top:12px}.hl b{display:block;font-size:13px;margin-bottom:4px}.hl span{color:var(--dim);font-size:13px}.tags{display:flex;gap:7px;flex-wrap:wrap}.tags span{font:11px var(--mono);color:#8cecff;background:rgba(85,230,255,.06);border:1px solid rgba(85,230,255,.10);padding:4px 9px;border-radius:6px}.tags .st{color:#ffd37a;background:none;border-color:#a17c2e}.pc h3{font:650 21px var(--sans);color:var(--text);margin:11px 0}.pc p,.pc ul{color:var(--dim);font-size:14px}.pc ul{margin:0 0 16px;padding-left:18px}
+.tl{border-left:1px solid rgba(125,151,190,.24);margin-left:6px}.ti{position:relative;padding:0 0 8px 32px}.ti:before{content:"";position:absolute;left:-6px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 5px rgba(85,230,255,.08),0 0 18px rgba(85,230,255,.35)}.ti time{font:11px var(--mono);color:#6e82a0}.ti h3{font:650 22px var(--sans);margin:5px 0 2px}.ti .org{color:var(--cyan);margin-bottom:14px}.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:0}.steps li{counter-increment:s;padding:19px 16px 19px 0;border-top:1px solid var(--line);display:flex;gap:12px;align-items:baseline;color:#d0dceb}.steps li:before{content:counter(s,decimal-leading-zero);font:11px var(--mono);color:var(--cyan)}.goal{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:8px;font-weight:550}.goal span.arrow{color:var(--cyan);font-family:var(--mono)}.goal .box{border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:rgba(255,255,255,.025)}
+.term{background:#030711;border:1px solid rgba(85,230,255,.16);border-radius:12px;font:12px var(--mono);overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.35)}.bar{display:flex;gap:6px;padding:11px 14px;border-bottom:1px solid rgba(125,151,190,.13)}.bar i{width:9px;height:9px;border-radius:50%;background:#2a3b55}.tb{padding:18px 20px;color:#8296b2;white-space:pre-wrap;overflow-x:auto}.ok{color:var(--green)}.warn{color:#7ddfff}.cmd{color:#dce8f7}
+.ct{display:grid;grid-template-columns:1fr 1.1fr;gap:55px;background:linear-gradient(145deg,rgba(16,26,49,.86),rgba(7,12,25,.76));border:1px solid var(--line);border-radius:20px;padding:48px;box-shadow:0 30px 80px rgba(0,0,0,.2)}.ct p{color:var(--dim)}.ct .l a{display:block;font:14px var(--mono);margin:11px 0;text-decoration:none;color:#c5d4e7}.ct .l a:hover{color:var(--cyan)}form{display:grid;gap:14px}label{display:grid;gap:7px;font-size:13px;color:#8497b1}input,textarea{font:15px var(--sans);color:var(--text);background:#050a16;border:1px solid var(--line);border-radius:9px;padding:12px 13px}input:focus,textarea:focus{border-color:var(--line2);outline:none;box-shadow:0 0 0 3px rgba(85,230,255,.06)}textarea{min-height:130px;resize:vertical}.hint{font-size:12px;margin:0;color:#647892}
+footer{border-top:1px solid var(--line);padding:30px 0;color:#657993;font-size:12px}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:920px){.links,.nav>.btn{display:none}.menu{display:inline-block}.hero{min-height:auto}.hero-grid,.about,.g3,.g2,.ct{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.emblem{justify-self:center}.hl{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.ct{padding:30px}.hero h1{font-size:clamp(44px,11vw,70px)}}
+@media(max-width:560px){section{padding:76px 0}.wrap,.nav{padding-left:18px;padding-right:18px}.hero{padding-top:55px}.hero p.lead{font-size:17px}.hl{grid-template-columns:1fr}.feat{padding:24px}.emblem{padding:38px 18px 25px;border-radius:20px}.logo:after{display:none}}
+
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}.contact-card{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);text-decoration:none;transition:.18s ease}.contact-card:hover{transform:translateY(-3px);border-color:var(--teal);box-shadow:0 14px 35px -24px rgba(46,196,182,.65)}.contact-icon{width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--line);border-radius:10px;color:var(--teal);font-size:18px}.contact-card strong{display:block;color:var(--text);font-size:15px}.contact-card small{display:block;color:var(--dim);font:11px var(--mono);margin-top:3px;overflow-wrap:anywhere}.contact-arrow{color:var(--amber);font:16px var(--mono)}
+
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}.case-block{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:22px}.case-label{font:12px var(--mono);color:var(--teal);letter-spacing:.08em}.case-block h4{font-size:17px;line-height:1.35;margin:10px 0;color:var(--text)}.case-block p,.case-block li{color:var(--dim);font-size:14px}.case-block ul{margin:10px 0 0;padding-left:18px}.architecture{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin:8px 0 24px;padding:16px;border:1px dashed var(--line);border-radius:10px;font:13px var(--mono);color:var(--teal)}.architecture b{color:var(--amber)}
+@media (max-width:860px){.case-grid{grid-template-columns:1fr}}
+
+.skip{position:absolute;left:-999px;top:8px}.skip:focus{left:12px;z-index:100;background:#eef6ff;color:#03101c;padding:9px 14px;border-radius:8px;font:600 14px var(--sans)}
+header.site{padding-top:env(safe-area-inset-top,0px)}
+.links a{position:relative;padding:4px 0}.links a.active{color:var(--cyan)}.links a.active:after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;background:var(--cyan)}
+#mnav{flex-direction:column;padding:8px 20px 16px;border-top:1px solid var(--line);background:rgba(5,8,22,.97)}
+#mnav a{padding:12px 4px;text-decoration:none;color:#c4d1e2;border-bottom:1px solid rgba(125,151,190,.1)}
+.span2{grid-column:span 2}.textlink{color:var(--cyan);text-underline-offset:3px}
+.case-label{color:var(--cyan)}
+.diagram{margin:6px 0 26px;padding:20px;border:1px solid var(--line);border-radius:14px;background:rgba(3,7,17,.6);overflow-x:auto}
+.diagram svg{display:block;width:100%;min-width:680px;height:auto}
+.diagram figcaption{margin-top:12px;font:11px var(--mono);color:#6e82a0;letter-spacing:.04em}
+.dn{fill:rgba(15,24,47,.95);stroke:rgba(125,151,190,.4);stroke-width:1.2}.dt{fill:#dce8f7;font:600 14px Inter,sans-serif;text-anchor:middle}.ds{fill:#8fa3bf;font:11px "IBM Plex Mono",monospace;text-anchor:middle}
+.dz{fill:none;stroke-width:1.2}.da{stroke:#55e6ff;stroke-width:1.6;fill:none;marker-end:url(#ar)}.dh{fill:#93a4bd;font:600 10px "IBM Plex Mono",monospace;letter-spacing:.14em}
+.contact-list{display:grid;gap:12px;align-content:start}
+.contact-icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.contact-icon{color:var(--cyan)}.contact-card:hover{border-color:var(--line2);box-shadow:0 14px 35px -24px rgba(57,169,255,.6)}.contact-arrow{color:var(--cyan)}
+@media(max-width:920px){.span2{grid-column:auto}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.card:hover,.feat:hover,.btn:hover,.contact-card:hover{transform:none}}
+
+/* DRAVIK69 animated logo effects */
+.dravik-logo{position:relative;isolation:isolate}
+.dravik-logo:before{
+  content:"";position:absolute;left:-12px;top:50%;width:210px;height:48px;
+  transform:translateY(-50%);border-radius:16px;
+  background:radial-gradient(ellipse,rgba(85,230,255,.16),transparent 68%);
+  filter:blur(7px);opacity:.7;z-index:-1;animation:dravikGlow 3.2s ease-in-out infinite;
+}
+.dravik-mark{transition:transform .35s ease,filter .35s ease;transform-origin:center}
+.dravik-word{transition:transform .35s ease,text-shadow .35s ease}
+.dravik-logo:hover .dravik-mark{
+  transform:rotate(-4deg) scale(1.09);
+  filter:drop-shadow(0 0 7px rgba(85,230,255,.9))
+         drop-shadow(0 0 18px rgba(57,169,255,.55))
+         drop-shadow(0 0 30px rgba(139,124,255,.28));
+}
+.dravik-logo:hover .dravik-word{
+  transform:translateX(3px);
+  text-shadow:0 0 12px rgba(85,230,255,.55);
+}
+.dravik-mark path:first-of-type{stroke-dasharray:190 30;animation:dravikPulse 3s ease-in-out infinite}
+@keyframes dravikGlow{
+  0%,100%{opacity:.42;transform:translateY(-50%) scale(.92)}
+  50%{opacity:.9;transform:translateY(-50%) scale(1.08)}
+}
+@keyframes dravikPulse{
+  0%,100%{stroke-opacity:.65}
+  50%{stroke-opacity:1}
+}
+@media(prefers-reduced-motion:reduce){
+  .dravik-logo:before,.dravik-mark path:first-of-type{animation:none!important}
+  .dravik-mark,.dravik-word{transition:none!important}
+}
+
+
+/* Site-wide motion system */
+@keyframes siteFadeUp{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes ambientFloat{
+  0%,100%{transform:translate3d(0,0,0)}
+  50%{transform:translate3d(0,-10px,0)}
+}
+@keyframes borderPulse{
+  0%,100%{box-shadow:0 18px 50px rgba(0,0,0,.12),0 0 0 rgba(85,230,255,0)}
+  50%{box-shadow:0 18px 50px rgba(0,0,0,.12),0 0 28px rgba(85,230,255,.07)}
+}
+@keyframes scanLine{
+  0%{transform:translateY(-120%);opacity:0}
+  15%{opacity:.5}
+  70%{opacity:.22}
+  100%{transform:translateY(520%);opacity:0}
+}
+@keyframes shimmer{
+  0%{transform:translateX(-130%);opacity:0}
+  25%{opacity:.7}
+  60%,100%{transform:translateX(180%);opacity:0}
+}
+@keyframes dotPulse{
+  0%,100%{transform:scale(1);opacity:.7}
+  50%{transform:scale(1.35);opacity:1}
+}
+
+/* Smooth page entrance */
+main > section{
+  animation:siteFadeUp .75s ease both;
+}
+.hero{animation-delay:.05s}
+#about{animation-delay:.12s}
+#skills{animation-delay:.18s}
+#cloud{animation-delay:.24s}
+#projects{animation-delay:.30s}
+#education{animation-delay:.36s}
+#training{animation-delay:.42s}
+#goals{animation-delay:.48s}
+#contact{animation-delay:.54s}
+
+/* Ambient hero motion */
+.hero:after{animation:ambientFloat 7s ease-in-out infinite}
+.emblem:before{animation:ambientFloat 6s ease-in-out infinite reverse}
+
+/* Cards get subtle living motion */
+.card,.feat{
+  position:relative;
+  overflow:hidden;
+}
+.card:before,.feat:before{
+  content:"";position:absolute;top:0;left:-120%;width:55%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(85,230,255,.65),transparent);
+  animation:shimmer 6s ease-in-out infinite;
+  pointer-events:none;
+}
+.card:nth-child(2):before,.feat:nth-child(2):before{animation-delay:1.2s}
+.card:nth-child(3):before,.feat:nth-child(3):before{animation-delay:2.2s}
+.card:nth-child(4):before{animation-delay:3.2s}
+.card:nth-child(5):before{animation-delay:4.2s}
+
+.card:hover,.feat:hover{
+  transform:translateY(-7px) scale(1.008);
+}
+.card:hover:after,.feat:hover:after{
+  opacity:1;
+}
+
+/* Skills chips hover */
+.chips li{
+  transition:transform .22s ease,border-color .22s ease,background .22s ease,
+             box-shadow .22s ease,color .22s ease;
+}
+.chips li:hover{
+  transform:translateY(-3px);
+  border-color:rgba(85,230,255,.42);
+  background:rgba(85,230,255,.055);
+  box-shadow:0 7px 20px rgba(57,169,255,.08);
+  color:#eefaff;
+}
+
+/* Buttons and social links */
+.btn,.social a,.contact-card{
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,
+             background .25s ease;
+}
+.btn:hover{transform:translateY(-3px) scale(1.015)}
+.btn-p{background-size:200% 200%;animation:buttonGlow 5s ease infinite}
+@keyframes buttonGlow{
+  0%,100%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+}
+.social a:hover{box-shadow:0 8px 24px rgba(57,169,255,.09)}
+
+/* Architecture / case study */
+.diagram{
+  transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;
+}
+.diagram:hover{
+  transform:translateY(-4px);
+  border-color:rgba(85,230,255,.34);
+  box-shadow:0 20px 55px rgba(0,0,0,.2),0 0 30px rgba(85,230,255,.05);
+}
+.architecture b,.case-label{animation:dotPulse 2.8s ease-in-out infinite}
+
+/* Timeline nodes */
+.ti:before{animation:dotPulse 2.6s ease-in-out infinite}
+
+/* Goal boxes */
+.goal .box{
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+}
+.goal .box:hover{
+  transform:translateY(-4px);
+  border-color:rgba(85,230,255,.35);
+  box-shadow:0 12px 28px rgba(57,169,255,.08);
+}
+.goal .arrow{animation:arrowPulse 1.8s ease-in-out infinite}
+@keyframes arrowPulse{
+  0%,100%{transform:translateX(0);opacity:.65}
+  50%{transform:translateX(5px);opacity:1}
+}
+
+/* Terminal scan effect */
+.term{position:relative}
+.term:after{
+  content:"";position:absolute;left:0;right:0;top:0;height:2px;
+  background:linear-gradient(90deg,transparent,rgba(85,230,255,.5),transparent);
+  animation:scanLine 5.5s linear infinite;
+  pointer-events:none;
+}
+
+/* Contact glow */
+.ct{
+  transition:border-color .35s ease,box-shadow .35s ease,transform .35s ease;
+}
+.ct:hover{
+  border-color:rgba(85,230,255,.28);
+  box-shadow:0 30px 90px rgba(0,0,0,.24),0 0 50px rgba(57,169,255,.055);
+}
+.contact-card:hover{
+  transform:translateX(5px) translateY(-2px);
+}
+
+/* Navigation hover underline animation */
+.links a:after{
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .25s ease;
+}
+.links a:hover:after,.links a.active:after{
+  transform:scaleX(1);
+}
+
+/* Footer subtle entrance */
+footer{animation:siteFadeUp .8s ease .65s both}
+
+/* Keep motion accessible */
+@media(prefers-reduced-motion:reduce){
+  main > section,footer,.hero:after,.emblem:before,.card:before,.feat:before,
+  .btn-p,.architecture b,.case-label,.ti:before,.goal .arrow,.term:after{
+    animation:none!important;
+  }
+  .card:hover,.feat:hover,.btn:hover,.chips li:hover,.goal .box:hover,
+  .diagram:hover,.contact-card:hover,.ct:hover{
+    transform:none!important;
+  }
+}
+
+
+/* Enhanced animated emblem */
+.emblem{
+  isolation:isolate;
+}
+.emblem:before{
+  animation: emblemOrb 6s ease-in-out infinite !important;
+}
+.emblem:after{
+  animation: labelPulse 3s ease-in-out infinite;
+}
+.emblem .big{
+  position:relative;
+  z-index:2;
+  animation: emblemFloat 4.5s ease-in-out infinite;
+  transform-origin:center;
+  filter:drop-shadow(0 0 12px rgba(85,230,255,.22))
+         drop-shadow(0 0 30px rgba(57,169,255,.10));
+}
+.emblem .big path{
+  transition:filter .3s ease;
+}
+.emblem .big > use{
+  animation: emblemGlow 3.5s ease-in-out infinite;
+}
+
+/* Moving energy rings around the emblem */
+.emblem{
+  --ring:rgba(85,230,255,.22);
+}
+.emblem:global{display:flex}
+.emblem::marker{display:none}
+.emblem .wm{
+  position:relative;
+  z-index:3;
+}
+.emblem .wm b{
+  animation:textGlow 3s ease-in-out infinite;
+}
+.emblem .wm span{
+  animation:subtleRise 3.5s ease-in-out infinite;
+}
+
+/* CSS-generated floating particles */
+.emblem{
+  background:
+    radial-gradient(circle at 18% 30%,rgba(85,230,255,.22) 0 2px,transparent 3px),
+    radial-gradient(circle at 82% 38%,rgba(66,230,164,.20) 0 2px,transparent 3px),
+    radial-gradient(circle at 25% 76%,rgba(139,124,255,.22) 0 1.5px,transparent 3px),
+    radial-gradient(circle at 75% 78%,rgba(85,230,255,.18) 0 2px,transparent 3px),
+    linear-gradient(145deg,rgba(18,29,55,.76),rgba(5,10,23,.86));
+  background-size:auto,auto,auto,auto,auto;
+}
+.emblem::before{
+  box-shadow:
+    0 0 0 1px rgba(85,230,255,.02),
+    0 0 55px rgba(85,230,255,.08);
+}
+
+/* Hover turns the emblem into an interactive effect */
+.emblem:hover .big{
+  animation-play-state:paused;
+  transform:scale(1.045) translateY(-5px);
+  filter:drop-shadow(0 0 18px rgba(85,230,255,.65))
+         drop-shadow(0 0 42px rgba(57,169,255,.28))
+         drop-shadow(0 0 65px rgba(139,124,255,.16));
+}
+.emblem:hover{
+  border-color:rgba(85,230,255,.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 35px 90px rgba(0,0,0,.42),
+    0 0 90px rgba(57,169,255,.15);
+}
+
+@keyframes emblemFloat{
+  0%,100%{transform:translateY(0) rotate(0deg) scale(1)}
+  25%{transform:translateY(-5px) rotate(-1deg) scale(1.012)}
+  50%{transform:translateY(-10px) rotate(0deg) scale(1.025)}
+  75%{transform:translateY(-4px) rotate(1deg) scale(1.012)}
+}
+@keyframes emblemOrb{
+  0%,100%{transform:translate3d(0,0,0) scale(.92);opacity:.48}
+  50%{transform:translate3d(-18px,12px,0) scale(1.12);opacity:.9}
+}
+@keyframes emblemGlow{
+  0%,100%{opacity:.86}
+  50%{opacity:1;filter:drop-shadow(0 0 8px rgba(85,230,255,.35))}
+}
+@keyframes labelPulse{
+  0%,100%{opacity:.62;letter-spacing:.12em}
+  50%{opacity:1;letter-spacing:.17em}
+}
+@keyframes textGlow{
+  0%,100%{text-shadow:0 0 0 rgba(85,230,255,0)}
+  50%{text-shadow:0 0 18px rgba(85,230,255,.38)}
+}
+@keyframes subtleRise{
+  0%,100%{transform:translateY(0);opacity:.72}
+  50%{transform:translateY(-3px);opacity:1}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .emblem:before,.emblem:after,.emblem .big,.emblem .big > use,
+  .emblem .wm b,.emblem .wm span{animation:none!important}
+}
+
+
+/* Extra lively / cheerful emblem motion */
+.emblem{
+  --spark1:#55e6ff;
+  --spark2:#42e6a4;
+  --spark3:#8b7cff;
+  --spark4:#ffd37a;
+  animation:emblemBreath 5s ease-in-out infinite;
+}
+.emblem::after{
+  text-shadow:0 0 10px rgba(85,230,255,.25);
+}
+.emblem .big{
+  animation:
+    emblemFloat 4.5s ease-in-out infinite,
+    emblemRainbowGlow 6s ease-in-out infinite;
+}
+.emblem .wm b{
+  animation:
+    textGlow 3s ease-in-out infinite,
+    cheerfulText 4s ease-in-out infinite;
+}
+
+/* Four orbiting energy dots */
+.emblem .big::after{content:"";display:none}
+.emblem:global{display:flex}
+
+/* Animated light sweep */
+.emblem{
+  background:
+    radial-gradient(circle at 18% 30%,rgba(85,230,255,.30) 0 2px,transparent 3px),
+    radial-gradient(circle at 82% 38%,rgba(66,230,164,.30) 0 2px,transparent 3px),
+    radial-gradient(circle at 25% 76%,rgba(139,124,255,.30) 0 2px,transparent 3px),
+    radial-gradient(circle at 75% 78%,rgba(255,211,122,.25) 0 2px,transparent 3px),
+    linear-gradient(120deg,rgba(18,29,55,.82),rgba(5,10,23,.90));
+}
+.emblem::before{
+  animation:
+    emblemOrb 6s ease-in-out infinite !important,
+    colorBreath 8s ease-in-out infinite;
+}
+.emblem::after{
+  animation:
+    labelPulse 3s ease-in-out infinite,
+    labelShine 5s linear infinite;
+}
+
+/* Moving scan/sweep across the emblem */
+.emblem{
+  overflow:hidden;
+}
+.emblem .wm::before{
+  content:"";
+  position:absolute;
+  left:-80%;
+  top:-180px;
+  width:45%;
+  height:500px;
+  transform:rotate(22deg);
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(85,230,255,.08),
+    rgba(255,255,255,.16),
+    rgba(139,124,255,.08),
+    transparent
+  );
+  filter:blur(3px);
+  pointer-events:none;
+  animation:lightSweep 4.8s ease-in-out infinite;
+}
+
+/* Make the whole emblem feel alive */
+@keyframes emblemBreath{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-3px) scale(1.006)}
+}
+@keyframes emblemRainbowGlow{
+  0%,100%{
+    filter:drop-shadow(0 0 12px rgba(85,230,255,.22))
+           drop-shadow(0 0 28px rgba(57,169,255,.10));
+  }
+  33%{
+    filter:drop-shadow(0 0 18px rgba(85,230,255,.55))
+           drop-shadow(0 0 35px rgba(66,230,164,.18));
+  }
+  66%{
+    filter:drop-shadow(0 0 18px rgba(139,124,255,.48))
+           drop-shadow(0 0 36px rgba(255,211,122,.14));
+  }
+}
+@keyframes colorBreath{
+  0%,100%{filter:blur(10px) hue-rotate(0deg)}
+  50%{filter:blur(13px) hue-rotate(18deg)}
+}
+@keyframes cheerfulText{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-2px) scale(1.012)}
+}
+@keyframes labelShine{
+  0%,70%,100%{text-shadow:0 0 10px rgba(85,230,255,.20)}
+  82%{text-shadow:0 0 22px rgba(85,230,255,.70)}
+}
+@keyframes lightSweep{
+  0%{left:-80%;opacity:0}
+  15%{opacity:.25}
+  55%{opacity:.7}
+  100%{left:150%;opacity:0}
+}
+
+/* Extra fun hover */
+.emblem:hover{
+  animation:none;
+  transform:translateY(-6px) scale(1.012);
+  border-color:rgba(85,230,255,.55);
+}
+.emblem:hover .big{
+  animation:
+    emblemFloat 2.1s ease-in-out infinite,
+    emblemRainbowGlow 2.4s ease-in-out infinite;
+}
+.emblem:hover .wm b{
+  animation:cheerfulText .9s ease-in-out infinite;
+}
+.emblem:hover::after{
+  color:#aeefff;
+}
+
+/* Mobile stays smooth */
+@media(prefers-reduced-motion:reduce){
+  .emblem,.emblem::before,.emblem::after,.emblem .big,
+  .emblem .wm,.emblem .wm b,.emblem .wm::before{
+    animation:none!important;
+  }
+}
+
+
+/* Professional Problem / Approach / Outcome switcher */
+.case-switcher{
+  margin:28px 0;
+  border:1px solid rgba(125,151,190,.18);
+  border-radius:16px;
+  background:linear-gradient(145deg,rgba(6,12,25,.82),rgba(12,20,39,.72));
+  overflow:hidden;
+  box-shadow:0 18px 50px rgba(0,0,0,.16);
+}
+.case-tabs{
+  display:flex;
+  gap:0;
+  border-bottom:1px solid rgba(125,151,190,.16);
+  background:rgba(255,255,255,.018);
+}
+.case-tab{
+  position:relative;
+  flex:1;
+  appearance:none;
+  border:0;
+  border-right:1px solid rgba(125,151,190,.12);
+  background:transparent;
+  color:#7f92ad;
+  padding:16px 18px;
+  cursor:pointer;
+  font:700 11px var(--mono);
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  transition:color .25s ease,background .25s ease,box-shadow .25s ease;
+}
+.case-tab:last-child{border-right:0}
+.case-tab:hover{
+  color:#dcecff;
+  background:rgba(85,230,255,.035);
+}
+.case-tab.active{
+  color:var(--cyan);
+  background:rgba(85,230,255,.055);
+  box-shadow:inset 0 -2px 0 var(--cyan);
+}
+.case-tab .tab-num{
+  display:inline-grid;
+  place-items:center;
+  width:24px;
+  height:24px;
+  margin-right:8px;
+  border:1px solid rgba(85,230,255,.18);
+  border-radius:7px;
+  color:#7890ad;
+  font-size:10px;
+  transition:.25s ease;
+}
+.case-tab.active .tab-num{
+  color:#03101c;
+  background:var(--cyan);
+  border-color:var(--cyan);
+}
+.case-panel{
+  padding:25px 26px 27px;
+  min-height:132px;
+  animation:casePanelIn .3s ease both;
+}
+.case-panel .case-label{
+  display:block;
+  margin-bottom:9px;
+  font:700 11px var(--mono);
+  letter-spacing:.12em;
+  color:var(--cyan);
+}
+.case-panel h4{
+  margin:0 0 9px;
+  color:var(--text);
+  font-size:17px;
+  line-height:1.4;
+}
+.case-panel p,.case-panel li{
+  color:var(--dim);
+  font-size:14px;
+  line-height:1.7;
+}
+.case-panel p{margin:0}
+.case-panel ul{margin:8px 0 0;padding-left:19px}
+.case-panel li+li{margin-top:5px}
+.case-progress{
+  display:flex;
+  gap:5px;
+  padding:0 26px 17px;
+}
+.case-progress span{
+  height:2px;
+  flex:1;
+  border-radius:2px;
+  background:rgba(125,151,190,.14);
+  transition:background .25s ease,box-shadow .25s ease;
+}
+.case-progress span.active{
+  background:var(--cyan);
+  box-shadow:0 0 10px rgba(85,230,255,.4);
+}
+@keyframes casePanelIn{
+  from{opacity:0;transform:translateY(7px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@media(max-width:560px){
+  .case-tab{padding:13px 7px;font-size:9px}
+  .case-tab .tab-num{width:20px;height:20px;margin-right:4px}
+  .case-panel{padding:21px 18px 22px}
+  .case-progress{padding-left:18px;padding-right:18px}
+}
+@media(prefers-reduced-motion:reduce){
+  .case-panel{animation:none!important}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#top">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="mark" viewBox="0 0 320 320">
+<path d="M160 24 L272 64 V148 C272 214 228 262 160 296 C92 262 48 214 48 148 V64 Z" fill="#0a1224" stroke="url(#dg)" stroke-width="9" stroke-linejoin="round"/>
+<g fill="#39a9ff"><circle cx="128" cy="158" r="22"/><circle cx="166" cy="144" r="32"/><circle cx="204" cy="160" r="22"/><rect x="106" y="158" width="120" height="24" rx="12"/></g>
+<circle cx="166" cy="150" r="9" fill="#0a1224"/><path d="M160 156 L172 156 L175 176 L157 176 Z" fill="#0a1224"/>
+<path d="M168 182 V212 M168 212 L128 238 M168 212 L208 238 M168 212 V246" stroke="#55e6ff" stroke-width="6" fill="none" stroke-linecap="round"/>
+<g fill="#42e6a4"><circle cx="128" cy="238" r="8"/><circle cx="208" cy="238" r="8"/><circle cx="168" cy="248" r="8"/></g>
+</symbol></svg>
+<header class="site">
+  <nav class="nav" aria-label="Main">
+    <a class="logo dravik-logo" href="#top" aria-label="DRAVIK69, home">
+  <svg class="dravik-mark" viewBox="0 0 74 74" aria-hidden="true">
+    <defs>
+      <linearGradient id="dg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#55e6ff"/><stop offset=".55" stop-color="#39a9ff"/><stop offset="1" stop-color="#8b7cff"/>
+      </linearGradient>
+    </defs>
+    <path d="M9 10h27c17 0 29 11 29 27S53 64 36 64H9V10Z" fill="none" stroke="url(#dg)" stroke-width="7"/>
+    <path d="M18 20h16c11 0 19 6 19 17s-8 17-19 17H18V20Z" fill="#071225" stroke="#55e6ff" stroke-width="3"/>
+    <path d="M11 39 31 20 24 39l18 18-12-2-13-12-6 6Z" fill="url(#dg)"/>
+  </svg>
+  <span class="dravik-word"><b>DRAVIK</b><strong>69</strong></span>
+</a>
+    <div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#skills">Technical Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#training">Training</a><a href="#goals">Goals</a><a href="#contact">Contact</a></div>
+    <a class="btn btn-p" href="#contact">Contact</a>
+    <button class="menu" id="mt" aria-expanded="false" aria-controls="mnav">Menu</button>
+  </nav>
+  <div id="mnav"><a href="#about">About</a><a href="#skills">Skills</a><a href="#skills">Technical Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#training">Training</a><a href="#goals">Goals</a><a href="#contact">Contact</a></div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Ahmed Abdo</h1>
+      <p class="role">Cloud · Linux · Networking<br>Infrastructure & Security</p>
+      <p class="loc">Cairo, Egypt</p>
+      <p class="lead">Computer Engineering undergraduate building practical skills in AWS, Linux, networking, and cloud security, with a long-term focus on Cloud Security and DevSecOps.</p>
+      <div class="row"><a class="btn btn-p" href="#projects">View projects</a><a class="btn btn-g" href="#contact">Contact me</a></div>
+      <div class="social">
+        <a href="https://github.com/ahmedsobhyad-debug" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/ahmed-sobhy-abdo-685451286" target="_blank" rel="noopener">LinkedIn</a>
+              </div>
+    </div>
+    <div class="emblem" role="img" aria-label="Ahmed Sobhy logo: a shield containing a cloud with a keyhole, connected to network nodes"><svg class="big" aria-hidden="true"><use href="#mark"/></svg><p class="wm"><b>Cloud · Linux · Security</b><span>Infrastructure</span></p></div>
+  </div>
+</section>
+
+<section id="about" class="alt">
+  <div class="wrap about">
+    <div>
+      <p class="kicker">About me</p>
+      <h2>Building with purpose.</h2>
+      <p>I'm a Computer Engineering undergraduate at Modern Academy for Engineering and Technology. My current focus is AWS, Linux administration, networking, cloud security, and IT infrastructure.</p>
+      <p>I learn best by building. I've completed a hands-on web application deployment on an AWS EC2 Linux server using Apache and PHP, including basic network and Security Group configuration. I'm currently expanding that foundation through Docker, Terraform, CI/CD, and DevSecOps learning.</p>
+      <p>I'm looking for an internship or entry-level IT, cloud, or system administration role where I can gain real experience and continue developing toward Cloud Security and DevSecOps.</p>
+    </div>
+    <dl class="facts">
+      <div class="fact"><dt>Location</dt><dd>Cairo, Egypt</dd></div>
+      <div class="fact"><dt>Field</dt><dd>Computer Engineering</dd></div>
+      <div class="fact"><dt>University</dt><dd>Modern Academy for Engineering and Technology</dd></div>
+      <div class="fact"><dt>Interests</dt><dd>Cloud Security, DevSecOps, Networking, IT Infrastructure</dd></div>
+      <div class="fact"><dt>Current focus</dt><dd>AWS, Linux, Networking, Cloud Security & IT Infrastructure</dd></div>
+      <div class="fact"><dt>Target roles</dt><dd>Internships and entry-level IT / Cloud / System Administration</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <p class="kicker">Skills</p>
+    <h2>Technical skills</h2>
+    <p class="sub">Technologies I have practiced, studied, or used in projects — grouped to keep the portfolio accurate.</p>
+    <div class="grid g3">
+      <div class="card"><h3>Linux & system administration</h3><ul class="chips"><li>Linux CLI</li><li>Files & directories</li><li>Users & permissions</li><li>Basic server administration</li><li>Apache</li><li>PHP deployment</li><li>Basic troubleshooting</li></ul></div>
+      <div class="card"><h3>Networking</h3><ul class="chips"><li>Networking fundamentals</li><li>TCP/IP</li><li>IP addressing</li><li>Subnets</li><li>DNS</li><li>Ports</li><li>HTTP / HTTPS</li><li>Basic troubleshooting</li><li>CCNA fundamentals</li></ul></div>
+      <div class="card"><h3>Infrastructure & tools</h3><ul class="chips"><li>Git & GitHub</li><li>Web server deployment</li><li>AWS infrastructure basics</li><li>Server configuration</li><li>Basic automation</li></ul></div>
+      <div class="card"><h3>Programming</h3><ul class="chips"><li>Python</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>SQL</li><li>MATLAB</li></ul></div>
+      <div class="card span2"><h3>Engineering & hardware</h3><ul class="chips"><li>Proteus</li><li>Tinkercad</li><li>MPLAB XC8</li><li>AVR / ATmega16</li><li>MATLAB / Simulink</li><li>Computer Architecture</li><li>Logic Design</li><li>Microelectronics</li><li>Circuit Analysis</li></ul></div>
+    </div>
+    <p class="sub" style="margin:22px 0 0">Docker, Terraform, CI/CD, monitoring, and DevSecOps are currently part of my learning path rather than professional experience.</p>
+  </div>
+</section>
+
+<section id="cloud" class="alt">
+  <div class="wrap">
+    <p class="kicker">Cloud & cybersecurity</p>
+    <h2>AWS and security foundations</h2>
+    <p class="sub">AWS services and security concepts I have practiced or studied.</p>
+    <div class="grid g3">
+      <div class="card"><h3>Compute & storage</h3><ul class="chips"><li>EC2</li><li>EBS</li><li>EFS</li></ul></div>
+      <div class="card"><h3>Networking</h3><ul class="chips"><li>VPC</li><li>Availability Zones</li><li>Security Groups</li></ul></div>
+      <div class="card"><h3>Security & monitoring</h3><ul class="chips"><li>IAM</li><li>CloudWatch</li><li>CloudTrail</li><li>Basic AWS security concepts</li></ul></div>
+    </div>
+    <p class="sub" style="margin:26px 0 0">Current learning areas include AWS infrastructure, cloud security, and cybersecurity fundamentals, supported by Linux and networking practice.</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <p class="kicker">Projects</p>
+    <h2>Things I've built</h2>
+    <p class="sub">Hands-on cloud, security, and engineering projects.</p>
+
+    <article class="feat case-study">
+      <div class="tags"><span>Featured case study</span><span class="st">AWS · Cloud Security</span></div>
+      <h3>Secure Three-Tier AWS Architecture: Financial Services Scenario</h3>
+      <p>Designed and implemented a secure, highly structured AWS three-tier architecture for a financial-services scenario, focusing on network isolation, controlled access, application availability, and security monitoring.</p>
+      <div class="case-grid">
+        <div class="case-block"><span class="case-label">01 · PROBLEM</span><h4>Secure a business application without exposing the application and database layers directly to the public internet.</h4><p>The architecture needed clear separation between public-facing traffic, application workloads, and sensitive data while maintaining controlled connectivity and room for monitoring.</p></div>
+        <div class="case-block"><span class="case-label">02 · APPROACH</span><h4>Build a layered AWS architecture with security controls at each boundary.</h4><ul><li>Created a dedicated VPC with public and private subnets across Availability Zones.</li><li>Placed an Application Load Balancer in the public layer to receive web traffic.</li><li>Configured a target group for the application EC2 instances.</li><li>Separated application and database workloads into private layers.</li><li>Used IAM, Security Groups, MFA, encryption, logging, and monitoring as security foundations.</li><li>Planned CloudWatch, CloudTrail, S3 backup storage, and RDS MySQL as supporting services.</li></ul></div>
+        <div class="case-block"><span class="case-label">03 · OUTCOME</span><h4>Produced a structured cloud architecture that demonstrates practical AWS networking and security design.</h4><p>The project established the core three-tier network and load-balancing components and provided a foundation for secure application hosting, controlled access, monitoring, and future hardening.</p></div>
+      </div>
+      <figure class="diagram">
+<svg viewBox="0 0 900 384" role="img" aria-label="Architecture: Internet to a public Application Load Balancer, then private EC2 application instances in two Availability Zones, then a private RDS MySQL database, all inside one VPC">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#55e6ff"/></marker></defs>
+<rect class="dn" x="10" y="150" width="110" height="64" rx="12"/><text class="dt" x="65" y="188">Internet</text>
+<rect class="dz" x="150" y="16" width="740" height="300" rx="16" stroke="#39a9ff" stroke-dasharray="6 5"/><text class="dh" x="170" y="38">VPC</text>
+<rect class="dz" x="172" y="52" width="190" height="248" rx="12" stroke="rgba(85,230,255,.45)"/><text class="dh" x="267" y="74" text-anchor="middle">PUBLIC SUBNETS</text>
+<rect class="dn" x="192" y="150" width="150" height="64" rx="10"/><text class="dt" x="267" y="179">ALB</text><text class="ds" x="267" y="198">Load Balancer</text>
+<rect class="dz" x="402" y="52" width="210" height="248" rx="12" stroke="rgba(139,124,255,.5)"/><text class="dh" x="507" y="74" text-anchor="middle">PRIVATE · APP</text>
+<rect class="dn" x="427" y="96" width="160" height="64" rx="10"/><text class="dt" x="507" y="125">EC2</text><text class="ds" x="507" y="144">Availability Zone A</text>
+<rect class="dn" x="427" y="192" width="160" height="64" rx="10"/><text class="dt" x="507" y="221">EC2</text><text class="ds" x="507" y="240">Availability Zone B</text>
+<rect class="dz" x="652" y="52" width="218" height="248" rx="12" stroke="rgba(66,230,164,.5)"/><text class="dh" x="761" y="74" text-anchor="middle">PRIVATE · DATA</text>
+<rect class="dn" x="677" y="150" width="168" height="64" rx="10" stroke-dasharray="5 4"/><text class="dt" x="761" y="179">RDS MySQL</text><text class="ds" x="761" y="198">planned</text>
+<path class="da" d="M120 182 H190"/><path class="da" d="M342 170 C382 170 386 128 425 128"/><path class="da" d="M342 194 C382 194 386 224 425 224"/>
+<path class="da" d="M587 128 C627 128 640 170 675 170"/><path class="da" d="M587 224 C627 224 640 196 675 196"/>
+<rect class="dz" x="150" y="332" width="740" height="40" rx="10" stroke="rgba(125,151,190,.4)" stroke-dasharray="5 4"/><text class="ds" x="520" y="357">CloudWatch · CloudTrail · S3 backups (planned supporting services)</text>
+</svg>
+<figcaption>Architecture overview. Dashed elements are planned. Security Groups control traffic at each boundary.</figcaption>
+</figure>
+      <div class="tags"><span>VPC</span><span>Public / Private Subnets</span><span>ALB</span><span>EC2</span><span>RDS MySQL</span><span>IAM</span><span>Security Groups</span><span>CloudWatch</span><span>CloudTrail</span><span>S3</span></div>
+    </article>
+
+    <article class="feat">
+      <div class="tags"><span>Cloud deployment</span></div>
+      <h3>AWS Cloud / Web Server Project</h3>
+      <p>I completed a hands-on deployment of a web application on an AWS EC2 Linux server. I configured the web server and application environment, then used Security Groups and networking concepts to control access.</p>
+      <div class="hl">
+        <div><b>Cloud</b><span>AWS EC2 instance hosting the application</span></div>
+        <div><b>Linux</b><span>Apache and PHP configured on the server</span></div>
+        <div><b>Networking</b><span>Ports and client-to-server traffic configured</span></div>
+        <div><b>Security</b><span>AWS Security Group rules used to control access</span></div>
+      </div>
+      <div class="tags"><span>AWS</span><span>EC2</span><span>Linux</span><span>Apache</span><span>PHP</span><span>Networking</span><span>Security Groups</span><span>Server configuration</span></div>
+</article>
+
+    <div class="grid g2">
+      <article class="card pc">
+        <div class="tags"><span>Cybersecurity</span><span class="st">MATLAB</span></div>
+        <h3>MATLAB Security & Network Traffic Analysis</h3>
+        <p>A MATLAB-based security analysis project focused on processing network-traffic data, identifying unusual traffic patterns, and visualizing results.</p>
+        <div class="case-grid" style="grid-template-columns:1fr;gap:10px;margin:18px 0">
+          <div class="case-block"><span class="case-label">PROBLEM</span><p>Analyze network traffic and identify patterns that may indicate unusual or suspicious activity.</p></div>
+          <div class="case-block"><span class="case-label">APPROACH</span><p>Used MATLAB to process traffic data, extract basic traffic characteristics, analyze patterns, and visualize the results for security monitoring.</p></div>
+          <div class="case-block"><span class="case-label">OUTCOME</span><p>Built a practical analysis workflow connecting data analysis with fundamental network-security monitoring concepts.</p></div>
+        </div>
+        <div class="tags"><span>MATLAB</span><span>Network Traffic Analysis</span><span>Data Analysis</span><span>Visualization</span><span>Cybersecurity</span></div>
+      </article>
+      <article class="card pc">
+        <div class="tags"><span>Computer Engineering</span><span class="st">Coursework</span></div>
+        <h3>Computer Engineering Projects</h3>
+        <p>Coursework projects across digital design, computer architecture, and embedded systems.</p>
+        <div class="case-grid" style="grid-template-columns:1fr;gap:10px;margin:18px 0">
+          <div class="case-block"><span class="case-label">PROBLEM</span><p>Design and analyze digital and embedded systems while applying computer engineering concepts through practical coursework.</p></div>
+          <div class="case-block"><span class="case-label">APPROACH</span><p>Worked with logic design, digital circuits, CPU architecture, AVR/ATmega16 microcontrollers, Proteus simulations, and circuit analysis.</p></div>
+          <div class="case-block"><span class="case-label">OUTCOME</span><p>Developed practical experience in digital system design, embedded programming concepts, circuit simulation, and computer architecture fundamentals.</p></div>
+        </div>
+        <div class="tags"><span>Logic Design</span><span>CPU Architecture</span><span>AVR / ATmega16</span><span>Proteus</span><span>Circuit Analysis</span></div>
+      </article>
+    </div>
+    <p class="sub" style="margin:22px 0 0">More code and lab write-ups on <a href="https://github.com/ahmedsobhyad-debug" target="_blank" rel="noopener" class="textlink">GitHub</a>.</p>
+  </div>
+</section>
+
+<section id="education" class="alt">
+  <div class="wrap">
+    <p class="kicker">Education</p>
+    <h2>Where I study</h2>
+    <div class="tl" style="margin-top:28px">
+      <div class="ti"><time>Current</time><h3>Bachelor of Computer Engineering</h3><div class="org">Modern Academy for Engineering and Technology · Cairo, Egypt</div>
+        <ul class="chips"><li>Computer Networks</li><li>Operating Systems</li><li>Information Security (Basics)</li><li>Computer Architecture</li><li>Logic Design</li><li>Microelectronics</li><li>Circuit Analysis</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="training">
+  <div class="wrap">
+    <p class="kicker">Training & certifications</p>
+    <h2>What I'm studying</h2>
+    <p class="sub">Current learning and training alongside my degree. These are learning areas, not claims of professional certification.</p>
+    <ul class="chips big"><li>AWS Cloud Computing</li><li>AWS Security</li><li>Networking</li><li>Linux</li><li>Cybersecurity</li><li>System Administration</li><li>Data Analytics</li><li>AI & Prompt Engineering</li></ul>
+    <p class="sub" style="margin:26px 0 0">Professional certifications will be added here when earned.</p>
+  </div>
+</section>
+
+<section id="goals" class="alt">
+  <div class="wrap">
+    <p class="kicker">Career interests</p>
+    <h2>Where I'm heading</h2>
+    <p class="sub">Build practical experience in IT, cloud, or system administration, then specialize in Cloud Security or DevSecOps.</p>
+    <div class="goal"><span class="box">Entry-level IT / Cloud / SysAdmin</span><span class="arrow">→</span><span class="box">Cloud Engineering</span><span class="arrow">→</span><span class="box">Cloud Security / DevSecOps</span></div>
+    <h3 style="margin:44px 0 6px">My learning path</h3>
+    <ol class="steps"><li>Linux</li><li>Networking</li><li>AWS</li><li>Cloud Security</li><li>Docker</li><li>Terraform</li><li>CI/CD</li><li>Monitoring</li><li>DevSecOps</li></ol>
+    <ul class="chips" style="margin-top:34px"><li>Cloud Computing</li><li>Cloud Security</li><li>DevSecOps</li><li>Cybersecurity</li><li>IT Infrastructure</li><li>System Administration</li><li>Networking</li></ul>
+    <div class="term" style="max-width:480px;margin-top:38px" aria-hidden="true">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <div class="tb"><span class="cmd">$ cat learning-path.txt</span>
+Linux <span class="warn">→</span> Networking <span class="warn">→</span> AWS
+<span class="warn">→</span> Cloud Security <span class="warn">→</span> Docker
+<span class="warn">→</span> Terraform <span class="warn">→</span> CI/CD
+<span class="warn">→</span> Monitoring <span class="warn">→</span> DevSecOps
+
+<span class="cmd">$ status</span>
+<span class="ok">building practical skills, open to work</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="ct">
+      <div class="l">
+        <p class="kicker">Contact</p>
+        <h2>Let's talk about internships and entry-level roles.</h2>
+        <p>I'm building practical skills in Cloud, Linux, Networking, and Security, and I'm open to internships and entry-level IT, cloud, system administration, and cybersecurity opportunities. Email is the fastest way to reach me.</p>
+      </div>
+      <div class="contact-list">
+        <a class="contact-card" href="mailto:ahmedsobhyad@gmail.com"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><span><strong>Email</strong><small>ahmedsobhyad@gmail.com</small></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+        <a class="contact-card" href="https://wa.me/201013170520" target="_blank" rel="noopener noreferrer"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span><span><strong>WhatsApp</strong><small>+20 101 317 0520</small></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+        <a class="contact-card" href="tel:+201013170520"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span><strong>Phone</strong><small>+20 101 317 0520</small></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+        <a class="contact-card" href="https://www.linkedin.com/in/ahmed-sobhy-abdo-685451286" target="_blank" rel="noopener noreferrer"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></span><span><strong>LinkedIn</strong><small>Ahmed Abdo</small></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+        <a class="contact-card" href="https://github.com/ahmedsobhyad-debug" target="_blank" rel="noopener noreferrer"><span class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></span><span><strong>GitHub</strong><small>ahmedsobhyad-debug</small></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Ahmed Abdo</span><span><a href="https://github.com/ahmedsobhyad-debug" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/ahmed-sobhy-abdo-685451286" target="_blank" rel="noopener">LinkedIn</a></span></div></footer>
+
+<script>
+const t=document.getElementById('mt'),mn=document.getElementById('mnav');
+t.addEventListener('click',()=>{const o=mn.style.display==='flex';mn.style.display=o?'none':'flex';t.setAttribute('aria-expanded',String(!o))});
+mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mn.style.display='none';t.setAttribute('aria-expanded','false')}));
+
+const ln=[...document.querySelectorAll('.links a')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;ln.forEach(a=>{const on=a.getAttribute('href')==='#'+e.target.id;a.classList.toggle('active',on);on?a.setAttribute('aria-current','true'):a.removeAttribute('aria-current')})}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('main section[id]').forEach(x=>io.observe(x));
+
+/* Convert Problem / Approach / Outcome blocks into interactive professional tabs */
+document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('.case-grid').forEach(grid=>{
+    const blocks=[...grid.querySelectorAll(':scope > .case-block')];
+    if(blocks.length!==3) return;
+
+    const data=blocks.map(block=>({
+      label:block.querySelector('.case-label')?.textContent.trim() || '',
+      content:block.innerHTML
+    }));
+
+    const wrap=document.createElement('div');
+    wrap.className='case-switcher';
+    wrap.innerHTML=`
+      <div class="case-tabs" role="tablist" aria-label="Project case study">
+        <button class="case-tab active" type="button" role="tab" aria-selected="true" aria-controls="case-panel">
+          <span class="tab-num">01</span> Problem
+        </button>
+        <button class="case-tab" type="button" role="tab" aria-selected="false" aria-controls="case-panel">
+          <span class="tab-num">02</span> Approach
+        </button>
+        <button class="case-tab" type="button" role="tab" aria-selected="false" aria-controls="case-panel">
+          <span class="tab-num">03</span> Outcome
+        </button>
+      </div>
+      <div class="case-panel" id="case-panel" role="tabpanel"></div>
+      <div class="case-progress" aria-hidden="true">
+        <span class="active"></span><span></span><span></span>
+      </div>
+    `;
+
+    const panel=wrap.querySelector('.case-panel');
+    const buttons=[...wrap.querySelectorAll('.case-tab')];
+    const progress=[...wrap.querySelectorAll('.case-progress span')];
+
+    const render=(index)=>{
+      panel.innerHTML=data[index].content;
+      buttons.forEach((btn,i)=>{
+        const active=i===index;
+        btn.classList.toggle('active',active);
+        btn.setAttribute('aria-selected',String(active));
+        btn.setAttribute('tabindex',active?'0':'-1');
+      });
+      progress.forEach((bar,i)=>bar.classList.toggle('active',i===index));
+      panel.classList.remove('case-panel');
+      void panel.offsetWidth;
+      panel.classList.add('case-panel');
+    };
+
+    buttons.forEach((btn,index)=>{
+      btn.addEventListener('click',()=>render(index));
+      btn.addEventListener('keydown',e=>{
+        if(e.key==='ArrowRight'||e.key==='ArrowDown'){
+          e.preventDefault();
+          const next=(index+1)%buttons.length;
+          buttons[next].focus(); render(next);
+        }
+        if(e.key==='ArrowLeft'||e.key==='ArrowUp'){
+          e.preventDefault();
+          const prev=(index-1+buttons.length)%buttons.length;
+          buttons[prev].focus(); render(prev);
+        }
+      });
+    });
+
+    grid.replaceWith(wrap);
+    render(0);
+  });
+});
+
+</script>
+</body>
+</html>

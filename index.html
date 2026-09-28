@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ahmed Sobhy Abdo Saad — Cloud, Linux & Networking | Computer Engineering</title>
+<meta name="description" content="Computer Engineering undergraduate in Cairo building toward Cloud Security and DevSecOps. AWS, Linux, networking and hands-on projects. Open to internships and entry-level IT, Cloud and Cybersecurity roles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050816;--bg2:#080d1d;--surface:rgba(12,19,38,.72);--surface2:rgba(18,28,52,.82);--line:rgba(125,151,190,.18);--line2:rgba(73,211,255,.30);--text:#eef6ff;--dim:#93a4bd;--blue:#39a9ff;--cyan:#55e6ff;--violet:#8b7cff;--green:#42e6a4;--sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,monospace;box-sizing:border-box}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:radial-gradient(circle at 80% 10%,rgba(57,169,255,.11),transparent 28%),radial-gradient(circle at 10% 45%,rgba(139,124,255,.08),transparent 28%),linear-gradient(180deg,var(--bg),#03050c 100%);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,black,transparent 75%);z-index:-1}
+a{color:inherit}:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}section{padding:104px 0;position:relative}section.alt{background:linear-gradient(180deg,rgba(10,16,31,.82),rgba(7,11,23,.52));border-top:1px solid rgba(255,255,255,.025);border-bottom:1px solid rgba(255,255,255,.025)}
+h1,h2,h3{margin:0;font-weight:650;line-height:1.08}h2{font-size:clamp(30px,4vw,48px);letter-spacing:-.035em;margin-bottom:14px}h3{font-size:18px}.kicker{font:600 12px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin:0 0 14px}.sub{color:var(--dim);max-width:64ch;margin:0 0 38px;font-size:17px}
+header.site{position:sticky;top:0;z-index:30;background:rgba(5,8,22,.72);backdrop-filter:blur(18px);border-bottom:1px solid rgba(125,151,190,.14)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 28px;max-width:1160px;margin:0 auto}.logo{display:inline-flex;align-items:center;gap:9px;text-decoration:none}.dravik-logo{min-width:170px}.dravik-mark{width:38px;height:38px;flex:none;filter:drop-shadow(0 0 10px rgba(85,230,255,.16))}.dravik-word{display:flex;align-items:baseline;font-family:var(--mono);font-weight:800;font-size:16px;letter-spacing:.055em;line-height:1}.dravik-word b{color:#eef6ff}.dravik-word strong{color:var(--cyan);font-size:18px;margin-left:1px}.logo:after{display:none}.links{display:flex;gap:22px;font-size:13px;color:#91a4be}.links a{text-decoration:none;transition:.2s}.links a:hover{color:var(--cyan)}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:700 14px var(--sans);padding:12px 19px;border-radius:10px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s}.btn:hover{transform:translateY(-2px)}.btn-p{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#03101c;box-shadow:0 10px 30px rgba(57,169,255,.18)}.btn-g{border-color:var(--line);color:var(--text);background:rgba(255,255,255,.025)}.btn-g:hover{border-color:var(--line2);box-shadow:0 10px 30px rgba(57,169,255,.08)}.menu{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:7px 11px;font:13px var(--mono)}#mnav{display:none}
+.hero{min-height:calc(100vh - 70px);display:flex;align-items:center;padding:76px 0 92px;overflow:hidden}.hero:after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-220px;top:60px;background:radial-gradient(circle,rgba(57,169,255,.18),transparent 68%);filter:blur(10px);pointer-events:none}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center}.hero h1{font-size:clamp(46px,7vw,82px);letter-spacing:-.065em;max-width:760px}.role{font:600 14px/1.8 var(--mono);color:var(--cyan);margin:18px 0 0;letter-spacing:.04em}.loc{font:12px var(--mono);color:#71839d;margin:7px 0 0}.hero p.lead{color:#a8b6ca;font-size:19px;max-width:58ch;margin:24px 0 30px}.row{display:flex;gap:12px;flex-wrap:wrap}.social{display:flex;gap:9px;margin-top:24px;flex-wrap:wrap;font:12px var(--mono)}.social a{border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:8px;padding:8px 12px;text-decoration:none;color:#91a4be;transition:.2s}.social a:hover{color:var(--cyan);border-color:var(--line2);transform:translateY(-1px)}
+.emblem{position:relative;display:flex;flex-direction:column;align-items:center;gap:16px;justify-self:end;width:min(440px,100%);padding:44px 34px 34px;border:1px solid rgba(73,211,255,.20);border-radius:28px;background:linear-gradient(145deg,rgba(18,29,55,.76),rgba(5,10,23,.86));box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 35px 90px rgba(0,0,0,.42),0 0 80px rgba(57,169,255,.08);overflow:hidden}.emblem:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(85,230,255,.16),transparent 68%);top:-100px;right:-80px}.emblem:after{content:"AWS • LINUX • NETWORKING • SECURITY";position:absolute;top:16px;left:0;right:0;text-align:center;font:10px var(--mono);letter-spacing:.12em;color:#6e87a8}.emblem .big{width:min(310px,75vw);height:auto;filter:drop-shadow(0 0 30px rgba(85,230,255,.15))}.emblem .wm{text-align:center;margin:0}.emblem .wm b{display:block;font:700 19px var(--sans);letter-spacing:.03em}.emblem .wm span{display:block;margin-top:5px;font:11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--cyan)}
+.about{display:grid;grid-template-columns:1.3fr .7fr;gap:76px}.about p{color:var(--dim);margin:0 0 17px;font-size:16px;max-width:68ch}.facts{margin:0;display:grid;gap:0;border-top:1px solid var(--line);align-content:start}.fact{padding:17px 0;border-bottom:1px solid var(--line)}.fact dt{font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#687c99;margin-bottom:4px}.fact dd{margin:0;font-weight:550;color:#dce8f7}
+.grid{display:grid;gap:18px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}.card,.feat{background:linear-gradient(145deg,rgba(15,24,47,.82),rgba(8,14,29,.72));border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 18px 50px rgba(0,0,0,.12);transition:transform .25s,border-color .25s,box-shadow .25s}.card:hover,.feat:hover{transform:translateY(-4px);border-color:rgba(85,230,255,.25);box-shadow:0 24px 70px rgba(0,0,0,.22)}.alt .card{background:rgba(8,14,28,.68)}.card h3{font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);margin-bottom:17px}.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}.chips li{border:1px solid rgba(125,151,190,.16);background:rgba(255,255,255,.025);border-radius:8px;padding:7px 11px;font-size:13px;color:#c4d1e2}.chips.big li{padding:10px 15px;font-size:14px}.feat{padding:34px;margin-bottom:18px;position:relative;overflow:hidden}.feat:after{content:"";position:absolute;right:-80px;top:-100px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(57,169,255,.12),transparent 68%);pointer-events:none}.feat h3{font:650 28px var(--sans);color:var(--text);margin:12px 0}.feat>p{color:var(--dim);max-width:75ch;margin:0 0 25px}.hl{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}.hl div{border-top:1px solid rgba(85,230,255,.35);padding-top:12px}.hl b{display:block;font-size:13px;margin-bottom:4px}.hl span{color:var(--dim);font-size:13px}.tags{display:flex;gap:7px;flex-wrap:wrap}.tags span{font:11px var(--mono);color:#8cecff;background:rgba(85,230,255,.06);border:1px solid rgba(85,230,255,.10);padding:4px 9px;border-radius:6px}.tags .st{color:#ffd37a;background:none;border-color:#a17c2e}.pc h3{font:650 21px var(--sans);color:var(--text);margin:11px 0}.pc p,.pc ul{color:var(--dim);font-size:14px}.pc ul{margin:0 0 16px;padding-left:18px}
+.tl{border-left:1px solid rgba(125,151,190,.24);margin-left:6px}.ti{position:relative;padding:0 0 8px 32px}.ti:before{content:"";position:absolute;left:-6px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 5px rgba(85,230,255,.08),0 0 18px rgba(85,230,255,.35)}.ti time{font:11px var(--mono);color:#6e82a0}.ti h3{font:650 22px var(--sans);margin:5px 0 2px}.ti .org{color:var(--cyan);margin-bottom:14px}.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:0}.steps li{counter-increment:s;padding:19px 16px 19px 0;border-top:1px solid var(--line);display:flex;gap:12px;align-items:baseline;color:#d0dceb}.steps li:before{content:counter(s,decimal-leading-zero);font:11px var(--mono);color:var(--cyan)}.goal{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:8px;font-weight:550}.goal span.arrow{color:var(--cyan);font-family:var(--mono)}.goal .box{border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:rgba(255,255,255,.025)}
+.term{background:#030711;border:1px solid rgba(85,230,255,.16);border-radius:12px;font:12px var(--mono);overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.35)}.bar{display:flex;gap:6px;padding:11px 14px;border-bottom:1px solid rgba(125,151,190,.13)}.bar i{width:9px;height:9px;border-radius:50%;background:#2a3b55}.tb{padding:18px 20px;color:#8296b2;white-space:pre-wrap;overflow-x:auto}.ok{color:var(--green)}.warn{color:#7ddfff}.cmd{color:#dce8f7}
+.ct{display:grid;grid-template-columns:1fr 1.1fr;gap:55px;background:linear-gradient(145deg,rgba(16,26,49,.86),rgba(7,12,25,.76));border:1px solid var(--line);border-radius:20px;padding:48px;box-shadow:0 30px 80px rgba(0,0,0,.2)}.ct p{color:var(--dim)}.ct .l a{display:block;font:14px var(--mono);margin:11px 0;text-decoration:none;color:#c5d4e7}.ct .l a:hover{color:var(--cyan)}form{display:grid;gap:14px}label{display:grid;gap:7px;font-size:13px;color:#8497b1}input,textarea{font:15px var(--sans);color:var(--text);background:#050a16;border:1px solid var(--line);border-radius:9px;padding:12px 13px}input:focus,textarea:focus{border-color:var(--line2);outline:none;box-shadow:0 0 0 3px rgba(85,230,255,.06)}textarea{min-height:130px;resize:vertical}.hint{font-size:12px;margin:0;color:#647892}
+footer{border-top:1px solid var(--line);padding:30px 0;color:#657993;font-size:12px}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:920px){.links,.nav>.btn{display:none}.menu{display:inline-block}.hero{min-height:auto}.hero-grid,.about,.g3,.g2,.ct{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.emblem{justify-self:center}.hl{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.ct{padding:30px}.hero h1{font-size:clamp(44px,11vw,70px)}}
+@media(max-width:560px){section{padding:76px 0}.wrap,.nav{padding-left:18px;padding-right:18px}.hero{padding-top:55px}.hero p.lead{font-size:17px}.hl{grid-template-columns:1fr}.feat{padding:24px}.emblem{padding:38px 18px 25px;border-radius:20px}.logo:after{display:none}}
+
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}.contact-card{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);text-decoration:none;transition:.18s ease}.contact-card:hover{transform:translateY(-3px);border-color:var(--teal);box-shadow:0 14px 35px -24px rgba(46,196,182,.65)}.contact-icon{width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--line);border-radius:10px;color:var(--teal);font-size:18px}.contact-card strong{display:block;color:var(--text);font-size:15px}.contact-card small{display:block;color:var(--dim);font:11px var(--mono);margin-top:3px;overflow-wrap:anywhere}.contact-arrow{color:var(--amber);font:16px var(--mono)}
+
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}.case-block{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:22px}.case-label{font:12px var(--mono);color:var(--teal);letter-spacing:.08em}.case-block h4{font-size:17px;line-height:1.35;margin:10px 0;color:var(--text)}.case-block p,.case-block li{color:var(--dim);font-size:14px}.case-block ul{margin:10px 0 0;padding-left:18px}.architecture{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin:8px 0 24px;padding:16px;border:1px dashed var(--line);border-radius:10px;font:13px var(--mono);color:var(--teal)}.architecture b{color:var(--amber)}
+@media (max-width:860px){.case-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="mark" viewBox="0 0 320 320">
+<path d="M160 24 L272 64 V148 C272 214 228 262 160 296 C92 262 48 214 48 148 V64 Z" fill="var(--surface)" stroke="var(--teal)" stroke-width="9" stroke-linejoin="round"/>
+<circle cx="128" cy="158" r="22" fill="var(--amber)"/><circle cx="166" cy="144" r="32" fill="var(--amber)"/><circle cx="204" cy="160" r="22" fill="var(--amber)"/>
+<rect x="106" y="158" width="120" height="24" rx="12" fill="var(--amber)"/>
+<circle cx="166" cy="150" r="9" fill="var(--surface)"/><path d="M160 156 L172 156 L175 176 L157 176 Z" fill="var(--surface)"/>
+<path d="M168 182 V212 M168 212 L128 238 M168 212 L208 238 M168 212 V246" stroke="var(--teal)" stroke-width="6" fill="none" stroke-linecap="round"/>
+<circle cx="128" cy="238" r="8" fill="var(--teal)"/><circle cx="208" cy="238" r="8" fill="var(--teal)"/><circle cx="168" cy="248" r="8" fill="var(--teal)"/>
+</symbol></svg>
+<header class="site">
+  <nav class="nav" aria-label="Main">
+    <a class="logo dravik-logo" href="#top" aria-label="DRAVIK69, home">
+  <svg class="dravik-mark" viewBox="0 0 74 74" aria-hidden="true">
+    <defs>
+      <linearGradient id="dg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#55e6ff"/><stop offset=".55" stop-color="#39a9ff"/><stop offset="1" stop-color="#8b7cff"/>
+      </linearGradient>
+    </defs>
+    <path d="M9 10h27c17 0 29 11 29 27S53 64 36 64H9V10Z" fill="none" stroke="url(#dg)" stroke-width="7"/>
+    <path d="M18 20h16c11 0 19 6 19 17s-8 17-19 17H18V20Z" fill="#071225" stroke="#55e6ff" stroke-width="3"/>
+    <path d="M11 39 31 20 24 39l18 18-12-2-13-12-6 6Z" fill="url(#dg)"/>
+  </svg>
+  <span class="dravik-word"><b>DRAVIK</b><strong>69</strong></span>
+</a>
+    <div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#cloud">Cloud & Security</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#training">Training</a><a href="#goals">Goals</a><a href="#contact">Contact</a></div>
+    <button class="menu" id="mt" aria-expanded="false" aria-controls="mnav">Menu</button>
+  </nav>
+  <div id="mnav"><a href="#about">About</a><a href="#skills">Skills</a><a href="#cloud">Cloud & Security</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#training">Training</a><a href="#goals">Goals</a><a href="#contact">Contact</a></div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Ahmed Sobhy Abdo Saad</h1>
+      <p class="role">Cloud · Linux · Networking<br>Infrastructure & Security</p>
+      <p class="loc">Cairo, Egypt</p>
+      <p class="lead">Computer Engineering undergraduate building practical skills in AWS, Linux, networking, and cloud security, with a long-term focus on Cloud Security and DevSecOps.</p>
+      <div class="row"><a class="btn btn-p" href="#projects">View projects</a><a class="btn btn-g" href="#contact">Contact me</a></div>
+      <div class="social">
+        <a href="https://github.com/ahmedsobhyad-debug" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/ahmed-sobhy-abdo-685451286" target="_blank" rel="noopener">LinkedIn</a>
+              </div>
+    </div>
+    <div class="emblem" role="img" aria-label="Ahmed Sobhy logo: a shield containing a cloud with a keyhole, connected to network nodes"><svg class="big" aria-hidden="true"><use href="#mark"/></svg><p class="wm"><b>Cloud · Linux · Security</b><span>Infrastructure</span></p></div>
+  </div>
+</section>
+
+<section id="about" class="alt">
+  <div class="wrap about">
+    <div>
+      <p class="kicker">About me</p>
+      <h2>Building with purpose.</h2>
+      <p>I'm a Computer Engineering undergraduate at Modern Academy for Engineering and Technology. My current focus is AWS, Linux administration, networking, cloud security, and IT infrastructure.</p>
+      <p>I learn best by building. I've completed a hands-on web application deployment on an AWS EC2 Linux server using Apache and PHP, including basic network and Security Group configuration. I'm currently expanding that foundation through Docker, Terraform, CI/CD, and DevSecOps learning.</p>
+      <p>I'm looking for an internship or entry-level IT, cloud, or system administration role where I can gain real experience and continue developing toward Cloud Security and DevSecOps.</p>
+    </div>
+    <dl class="facts">
+      <div class="fact"><dt>Location</dt><dd>Cairo, Egypt</dd></div>
+      <div class="fact"><dt>Field</dt><dd>Computer Engineering</dd></div>
+      <div class="fact"><dt>University</dt><dd>Modern Academy for Engineering and Technology</dd></div>
+      <div class="fact"><dt>Interests</dt><dd>Cloud Security, DevSecOps, Networking, IT Infrastructure</dd></div>
+      <div class="fact"><dt>Current focus</dt><dd>AWS, Linux, Networking, Cloud Security & IT Infrastructure</dd></div>
+      <div class="fact"><dt>Target roles</dt><dd>Internships and entry-level IT / Cloud / System Administration</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <p class="kicker">Skills</p>
+    <h2>Technical skills</h2>
+    <p class="sub">Technologies I have practiced, studied, or used in projects — grouped to keep the portfolio accurate.</p>
+    <div class="grid g3">
+      <div class="card"><h3>Linux & system administration</h3><ul class="chips"><li>Linux CLI</li><li>Files & directories</li><li>Users & permissions</li><li>Basic server administration</li><li>Apache</li><li>PHP deployment</li><li>Basic troubleshooting</li></ul></div>
+      <div class="card"><h3>Networking</h3><ul class="chips"><li>Networking fundamentals</li><li>TCP/IP</li><li>IP addressing</li><li>Subnets</li><li>DNS</li><li>Ports</li><li>HTTP / HTTPS</li><li>Basic troubleshooting</li><li>CCNA fundamentals</li></ul></div>
+      <div class="card"><h3>Infrastructure & tools</h3><ul class="chips"><li>Git & GitHub</li><li>Web server deployment</li><li>AWS infrastructure basics</li><li>Server configuration</li><li>Basic automation</li></ul></div>
+      <div class="card"><h3>Programming</h3><ul class="chips"><li>Python</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>SQL</li><li>MATLAB</li></ul></div>
+      <div class="card" style="grid-column:span 2"><h3>Engineering & hardware</h3><ul class="chips"><li>Proteus</li><li>Tinkercad</li><li>MPLAB XC8</li><li>AVR / ATmega16</li><li>MATLAB / Simulink</li><li>Computer Architecture</li><li>Logic Design</li><li>Microelectronics</li><li>Circuit Analysis</li></ul></div>
+    </div>
+    <p class="sub" style="margin:22px 0 0">Docker, Terraform, CI/CD, monitoring, and DevSecOps are currently part of my learning path rather than professional experience.</p>
+  </div>
+</section>
+
+<section id="cloud" class="alt">
+  <div class="wrap">
+    <p class="kicker">Cloud & cybersecurity</p>
+    <h2>AWS and security foundations</h2>
+    <p class="sub">AWS services and security concepts I have practiced or studied.</p>
+    <div class="grid g3">
+      <div class="card"><h3>Compute & storage</h3><ul class="chips"><li>EC2</li><li>EBS</li><li>EFS</li></ul></div>
+      <div class="card"><h3>Networking</h3><ul class="chips"><li>VPC</li><li>Availability Zones</li><li>Security Groups</li></ul></div>
+      <div class="card"><h3>Security & monitoring</h3><ul class="chips"><li>IAM</li><li>CloudWatch</li><li>CloudTrail</li><li>Basic AWS security concepts</li></ul></div>
+    </div>
+    <p class="sub" style="margin:26px 0 0">Current learning areas include AWS infrastructure, cloud security, and cybersecurity fundamentals, supported by Linux and networking practice.</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <p class="kicker">Projects</p>
+    <h2>Things I've built</h2>
+    <p class="sub">Hands-on cloud, security, and engineering projects.</p>
+
+    <article class="feat case-study">
+      <div class="tags"><span>Featured case study</span><span class="st">AWS · Cloud Security</span></div>
+      <h3>Secure Cloud Infrastructure for a Financial Services Company</h3>
+      <p>Designed and implemented a secure, highly structured AWS three-tier architecture for a financial-services scenario, focusing on network isolation, controlled access, application availability, and security monitoring.</p>
+      <div class="case-grid">
+        <div class="case-block"><span class="case-label">01 · PROBLEM</span><h4>Secure a business application without exposing the application and database layers directly to the public internet.</h4><p>The architecture needed clear separation between public-facing traffic, application workloads, and sensitive data while maintaining controlled connectivity and room for monitoring.</p></div>
+        <div class="case-block"><span class="case-label">02 · APPROACH</span><h4>Build a layered AWS architecture with security controls at each boundary.</h4><ul><li>Created a dedicated VPC with public and private subnets across Availability Zones.</li><li>Placed an Application Load Balancer in the public layer to receive web traffic.</li><li>Configured a target group for the application EC2 instances.</li><li>Separated application and database workloads into private layers.</li><li>Used IAM, Security Groups, MFA, encryption, logging, and monitoring as security foundations.</li><li>Planned CloudWatch, CloudTrail, S3 backup storage, and RDS MySQL as supporting services.</li></ul></div>
+        <div class="case-block"><span class="case-label">03 · OUTCOME</span><h4>Produced a structured cloud architecture that demonstrates practical AWS networking and security design.</h4><p>The project established the core three-tier network and load-balancing components and provided a foundation for secure application hosting, controlled access, monitoring, and future hardening.</p></div>
+      </div>
+      <div class="architecture"><span>Internet</span><b>→</b><span>Public ALB</span><b>→</b><span>Private EC2</span><b>→</b><span>Private RDS</span></div>
+      <div class="tags"><span>VPC</span><span>Public / Private Subnets</span><span>ALB</span><span>EC2</span><span>RDS MySQL</span><span>IAM</span><span>Security Groups</span><span>CloudWatch</span><span>CloudTrail</span><span>S3</span></div>
+    </article>
+
+    <article class="feat">
+      <div class="tags"><span>Cloud deployment</span></div>
+      <h3>AWS Cloud / Web Server Project</h3>
+      <p>I completed a hands-on deployment of a web application on an AWS EC2 Linux server. I configured the web server and application environment, then used Security Groups and networking concepts to control access.</p>
+      <div class="hl">
+        <div><b>Cloud</b><span>AWS EC2 instance hosting the application</span></div>
+        <div><b>Linux</b><span>Apache and PHP configured on the server</span></div>
+        <div><b>Networking</b><span>Ports and client-to-server traffic configured</span></div>
+        <div><b>Security</b><span>AWS Security Group rules used to control access</span></div>
+      </div>
+      <div class="tags"><span>AWS</span><span>EC2</span><span>Linux</span><span>Apache</span><span>PHP</span><span>Networking</span><span>Security Groups</span><span>Server configuration</span></div>
+    
+      <div style="margin-top:18px">
+        <img src="secure-3-tier-aws.png" alt="Secure 3-Tier Web Application on AWS architecture" style="width:100%;height:auto;display:block;border-radius:14px;border:1px solid rgba(56,189,248,.22)">
+      </div>
+</article>
+
+    <div class="grid g2">
+      <article class="card pc">
+        <div class="tags"><span>Cybersecurity</span><span class="st">MATLAB</span></div>
+        <h3>MATLAB Security & Network Traffic Analysis</h3>
+        <p>A MATLAB-based security analysis project focused on processing network-traffic data, identifying unusual traffic patterns, and visualizing results.</p>
+        <div class="case-grid" style="grid-template-columns:1fr;gap:10px;margin:18px 0">
+          <div class="case-block"><span class="case-label">PROBLEM</span><p>Analyze network traffic and identify patterns that may indicate unusual or suspicious activity.</p></div>
+          <div class="case-block"><span class="case-label">APPROACH</span><p>Used MATLAB to process traffic data, extract basic traffic characteristics, analyze patterns, and visualize the results for security monitoring.</p></div>
+          <div class="case-block"><span class="case-label">OUTCOME</span><p>Built a practical analysis workflow connecting data analysis with fundamental network-security monitoring concepts.</p></div>
+        </div>
+        <div class="tags"><span>MATLAB</span><span>Network Traffic Analysis</span><span>Data Analysis</span><span>Visualization</span><span>Cybersecurity</span></div>
+      </article>
+      <article class="card pc">
+        <div class="tags"><span>Computer Engineering</span><span class="st">Coursework</span></div>
+        <h3>Computer Engineering Projects</h3>
+        <p>Coursework projects across digital design, computer architecture, and embedded systems.</p>
+        <div class="case-grid" style="grid-template-columns:1fr;gap:10px;margin:18px 0">
+          <div class="case-block"><span class="case-label">PROBLEM</span><p>Design and analyze digital and embedded systems while applying computer engineering concepts through practical coursework.</p></div>
+          <div class="case-block"><span class="case-label">APPROACH</span><p>Worked with logic design, digital circuits, CPU architecture, AVR/ATmega16 microcontrollers, Proteus simulations, and circuit analysis.</p></div>
+          <div class="case-block"><span class="case-label">OUTCOME</span><p>Developed practical experience in digital system design, embedded programming concepts, circuit simulation, and computer architecture fundamentals.</p></div>
+        </div>
+        <div class="tags"><span>Logic Design</span><span>CPU Architecture</span><span>AVR / ATmega16</span><span>Proteus</span><span>Circuit Analysis</span></div>
+      </article>
+    </div>
+    <p class="sub" style="margin:22px 0 0">More code and lab write-ups on <a href="https://github.com/ahmedsobhyad-debug" target="_blank" rel="noopener" style="color:var(--teal)">GitHub</a>.</p>
+  </div>
+</section>
+
+<section id="education" class="alt">
+  <div class="wrap">
+    <p class="kicker">Education</p>
+    <h2>Where I study</h2>
+    <div class="tl" style="margin-top:28px">
+      <div class="ti"><time>Current</time><h3>Bachelor of Computer Engineering</h3><div class="org">Modern Academy for Engineering and Technology · Cairo, Egypt</div>
+        <ul class="chips"><li>Computer Networks</li><li>Operating Systems</li><li>Information Security (Basics)</li><li>Computer Architecture</li><li>Logic Design</li><li>Microelectronics</li><li>Circuit Analysis</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="training">
+  <div class="wrap">
+    <p class="kicker">Training & certifications</p>
+    <h2>What I'm studying</h2>
+    <p class="sub">Current learning and training alongside my degree. These are learning areas, not claims of professional certification.</p>
+    <ul class="chips big"><li>AWS Cloud Computing</li><li>AWS Security</li><li>Networking</li><li>Linux</li><li>Cybersecurity</li><li>System Administration</li><li>Data Analytics</li><li>AI & Prompt Engineering</li></ul>
+    <p class="sub" style="margin:18px 0 0"><strong>Additional learning:</strong> Data Analytics and AI & Prompt Engineering.</p>
+    <p class="sub" style="margin:26px 0 0">Professional certifications will be added here when earned.</p>
+  </div>
+</section>
+
+<section id="goals" class="alt">
+  <div class="wrap">
+    <p class="kicker">Career interests</p>
+    <h2>Where I'm heading</h2>
+    <p class="sub">Build practical experience in IT, cloud, or system administration, then specialize in Cloud Security or DevSecOps.</p>
+    <div class="goal"><span class="box">Entry-level IT / Cloud / SysAdmin</span><span class="arrow">→</span><span class="box">Cloud Engineering</span><span class="arrow">→</span><span class="box">Cloud Security / DevSecOps</span></div>
+    <h3 style="margin:44px 0 6px">My learning path</h3>
+    <ol class="steps"><li>Linux</li><li>Networking</li><li>AWS</li><li>Cloud Security</li><li>Docker</li><li>Terraform</li><li>CI/CD</li><li>Monitoring</li><li>DevSecOps</li></ol>
+    <ul class="chips" style="margin-top:34px"><li>Cloud Computing</li><li>Cloud Security</li><li>DevSecOps</li><li>Cybersecurity</li><li>IT Infrastructure</li><li>System Administration</li><li>Networking</li></ul>
+    <div class="term" style="max-width:480px;margin-top:38px" aria-hidden="true">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <div class="tb"><span class="cmd">$ cat learning-path.txt</span>
+Linux <span class="warn">→</span> Networking <span class="warn">→</span> AWS
+<span class="warn">→</span> Cloud Security <span class="warn">→</span> Docker
+<span class="warn">→</span> Terraform <span class="warn">→</span> CI/CD
+<span class="warn">→</span> Monitoring <span class="warn">→</span> DevSecOps
+
+<span class="cmd">$ status</span>
+<span class="ok">building practical skills, open to work</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="ct">
+      <div class="l">
+        <p class="kicker">Contact</p>
+        <h2>Building practical skills in Cloud, Linux, Networking, and Security.</h2>
+        <p>I'm open to internships and entry-level IT, cloud, system administration, and cybersecurity opportunities.</p>
+        <a href="mailto:ahmedsobhyad@gmail.com">✉ ahmedsobhyad@gmail.com</a>
+        <a href="tel:+201013170520">☎ +20 101 317 0520</a>
+        <a href="https://wa.me/201013170520" target="_blank" rel="noopener">◉ WhatsApp</a>
+        <a href="https://www.linkedin.com/in/ahmed-sobhy-abdo-685451286" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/ahmedsobhyad-debug" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="card contact-methods" style="background:var(--bg)">
+        <p class="kicker" style="margin-bottom:8px">Get in touch</p>
+        <h3 style="font:600 25px var(--sans);color:var(--text);margin:0 0 8px">Choose the way that works best for you.</h3>
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:ahmedsobhyad@gmail.com" aria-label="Send Ahmed an email">
+            <span class="contact-icon">✉</span>
+            <span><strong>Email</strong><small>ahmedsobhyad@gmail.com</small></span>
+            <span class="contact-arrow">↗</span>
+          </a>
+          <a class="contact-card" href="https://wa.me/201013170520" target="_blank" rel="noopener noreferrer" aria-label="Message Ahmed on WhatsApp">
+            <span class="contact-icon">◉</span>
+            <span><strong>WhatsApp</strong><small>+20 101 317 0520</small></span>
+            <span class="contact-arrow">↗</span>
+          </a>
+          <a class="contact-card" href="tel:+201013170520" aria-label="Call Ahmed">
+            <span class="contact-icon">☎</span>
+            <span><strong>Phone</strong><small>+20 101 317 0520</small></span>
+            <span class="contact-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Ahmed Sobhy Abdo Saad</span><span><a href="https://github.com/ahmedsobhyad-debug" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/ahmed-sobhy-abdo-685451286" target="_blank" rel="noopener">LinkedIn</a></span></div></footer>
+
+<script>
+const t=document.getElementById('mt'),mn=document.getElementById('mnav');
+t.addEventListener('click',()=>{const o=mn.style.display==='flex';mn.style.display=o?'none':'flex';t.setAttribute('aria-expanded',String(!o))});
+mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mn.style.display='none';t.setAttribute('aria-expanded','false')}));
+
+</script>
+</body>
+</html>
